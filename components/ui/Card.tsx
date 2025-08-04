@@ -9,6 +9,20 @@ type TModalItemCardProps = TouchableOpacityProps & {
   lightColor?: string;
   darkColor?: string;
 };
+
+/**
+ * A card component for modal items, styled with theme-aware background color.
+ *
+ * This component wraps a `TouchableOpacity` and applies custom styles, including
+ * theme-based background color using the `useThemeColor` hook.
+ *
+ * @param style - Additional styles to apply to the card container.
+ * @param lightColor - Optional background color for light theme.
+ * @param darkColor - Optional background color for dark theme.
+ * @param rest - Other `TouchableOpacityProps` passed to the underlying `TouchableOpacity`.
+ *
+ * @returns A themed, touchable card component for modal items.
+ */
 export function ModalItemCard({
   style,
   lightColor,

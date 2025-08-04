@@ -25,11 +25,33 @@ import { ThemedText } from "./ui/ThemedText";
 type AnimatedModalProps = ViewProps & {
   visible: boolean;
   onClose: () => void;
-  height?: number | string;
 };
 
 const { height: SCREEN_HEIGHT } = Dimensions.get("window");
 
+/**
+ * A modal component that slides up from the bottom of the screen with animated transitions.
+ * Supports drag-to-dismiss gesture and backdrop press to close.
+ *
+ * @remarks
+ * - Uses react-native-reanimated for smooth animations.
+ * - Uses react-native-gesture-handler for drag gestures.
+ * - The modal content is themed based on accessibility context.
+ * - The modal is rendered only when `visible` is true.
+ *
+ * @param {AnimatedModalProps} props - The props for the Modal component.
+ * @param {boolean} props.visible - Controls the visibility of the modal.
+ * @param {() => void} props.onClose - Callback invoked when the modal is dismissed.
+ * @param {React.ReactNode} props.children - The content to render inside the modal.
+ * @param {ViewProps} [props.style] - Optional style for the modal container.
+ *
+ * @example
+ * ```tsx
+ * <Modal visible={isOpen} onClose={() => setIsOpen(false)}>
+ *   <Text>Modal Content</Text>
+ * </Modal>
+ * ```
+ */
 const Modal = ({
   visible,
   onClose,

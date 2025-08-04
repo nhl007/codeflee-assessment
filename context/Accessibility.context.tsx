@@ -1,3 +1,11 @@
+/**
+ * Accessibility Context manages accessibility-related state
+ * for the application, such as theme, letter spacing, line height, and text alignment.
+ *
+ * The state is persisted using AsyncStorage, allowing user preferences to be saved across sessions.
+ * The provider exposes methods to update and reset the state.
+ */
+
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, {
   createContext,

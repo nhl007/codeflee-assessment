@@ -1,7 +1,6 @@
 /**
- * App Colors
+ * An object containing color schemes for light and dark themes.
  */
-
 export const Colors = {
   light: {
     text: "#11181C",

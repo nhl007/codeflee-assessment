@@ -1,23 +1,18 @@
+import AccessibilityFeatures from "@/components/AccessibilityFeatures";
 import Modal from "@/components/Modal";
-import { ModalItemCard } from "@/components/ui/Card";
 import { GradientView } from "@/components/ui/GradientView";
 import { ThemedButton } from "@/components/ui/ThemedButton";
 import { ThemedText } from "@/components/ui/ThemedText";
 import useAccessibilityContext from "@/hooks/useAccessibilityContext";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { useState } from "react";
 import { Image, Platform, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
   const {
-    state: { theme, letterSpacing, lineHeight, textAlign },
-    updateState,
-    resetState,
+    state: { theme },
   } = useAccessibilityContext();
 
   const [showModal, setShowModal] = useState(true);
@@ -93,89 +88,7 @@ export default function HomeScreen() {
       </SafeAreaView>
       {showModal && (
         <Modal visible={showModal} onClose={() => setShowModal(false)}>
-          <View style={styles.modalItemContainer}>
-            <ModalItemCard
-              onPress={() => {
-                updateState({
-                  theme: theme === "dark" ? "light" : "dark",
-                  textAlign,
-                  letterSpacing,
-                  lineHeight,
-                });
-              }}
-            >
-              <MaterialIcons
-                name={theme === "dark" ? "dark-mode" : "light-mode"}
-                size={28}
-                color={theme === "light" ? "black" : "white"}
-              />
-              <ThemedText>{theme}</ThemedText>
-            </ModalItemCard>
-            <ModalItemCard
-              onPress={() => {
-                updateState({
-                  theme,
-                  textAlign,
-                  letterSpacing: letterSpacing >= 2.5 ? 1 : letterSpacing + 0.5,
-                  lineHeight,
-                });
-              }}
-            >
-              <MaterialCommunityIcons
-                name="format-letter-spacing"
-                size={32}
-                color={theme === "light" ? "black" : "white"}
-              />
-              <ThemedText>{letterSpacing} px</ThemedText>
-            </ModalItemCard>
-            <ModalItemCard
-              onPress={() => {
-                updateState({
-                  theme,
-                  textAlign,
-                  letterSpacing,
-                  lineHeight: lineHeight >= 40 ? 24 : lineHeight + 8,
-                });
-              }}
-            >
-              <FontAwesome
-                name="text-height"
-                size={26}
-                color={theme === "light" ? "black" : "white"}
-              />
-              <ThemedText>{lineHeight} px</ThemedText>
-            </ModalItemCard>
-            <ModalItemCard
-              onPress={() => {
-                updateState({
-                  theme,
-                  textAlign:
-                    textAlign === "center"
-                      ? "right"
-                      : textAlign === "right"
-                      ? "justify"
-                      : textAlign === "justify"
-                      ? "left"
-                      : "center",
-                  letterSpacing,
-                  lineHeight,
-                });
-              }}
-            >
-              <FontAwesome
-                name={`align-${textAlign}`}
-                size={24}
-                color={theme === "light" ? "black" : "white"}
-              />
-              <ThemedText>{textAlign}</ThemedText>
-            </ModalItemCard>
-          </View>
-          <ThemedButton onPress={resetState} style={styles.resetButton}>
-            <FontAwesome6 name="repeat" size={18} color="#FFF" />
-            <ThemedText lightColor="#FFF" darkColor="#FFF">
-              Reset All Accessibility
-            </ThemedText>
-          </ThemedButton>
+          <AccessibilityFeatures />
         </Modal>
       )}
     </GradientView>
@@ -225,18 +138,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "row",
     gap: 10,
-  },
-  modalItemContainer: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    gap: 16,
-    flexWrap: "wrap",
-    padding: 16,
-  },
-  resetButton: {
-    backgroundColor: "#c01afe",
-    marginHorizontal: 16,
-    marginVertical: 24,
   },
 });

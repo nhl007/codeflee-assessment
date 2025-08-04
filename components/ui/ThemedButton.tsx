@@ -13,6 +13,22 @@ type ThemedButtonProps = TouchableOpacityProps & {
   flex?: number;
 };
 
+/**
+ * A themed button component that adapts its background color based on the current theme.
+ *
+ * @param style - Custom styles to apply to the button.
+ * @param lightColor - Optional background color for light theme.
+ * @param darkColor - Optional background color for dark theme.
+ * @param type - Button style type, either "default" or "transparent". Defaults to "default".
+ * @param flex - Optional flex value for layout.
+ * @param rest - Additional TouchableOpacityProps.
+ *
+ * Uses `useThemeColor` to determine the background color based on theme and provided colors.
+ * Applies rounded corners, padding, and row layout by default.
+ *
+ * @returns A themed TouchableOpacity button.
+ */
+
 export function ThemedButton({
   style,
   lightColor,
