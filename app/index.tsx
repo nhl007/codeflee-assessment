@@ -15,7 +15,7 @@ export default function HomeScreen() {
     state: { theme, textAlign },
   } = useAccessibilityContext();
 
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <GradientView
