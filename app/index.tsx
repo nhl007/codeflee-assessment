@@ -27,6 +27,7 @@ export default function HomeScreen() {
       }
     >
       <SafeAreaView style={styles.container}>
+        {/* //! Accessibility menu */}
         <View style={styles.menuContainer}>
           <ThemedButton
             darkColor="#4D4855"
@@ -57,6 +58,7 @@ export default function HomeScreen() {
           </ThemedButton>
         </View>
         <View style={styles.titleContainer}>
+          {/* //!Introduction */}
           <View
             style={[
               {
@@ -82,6 +84,7 @@ export default function HomeScreen() {
               Your Smart Learning Companion!
             </ThemedText>
           </View>
+          {/*//! CTA */}
           <View style={styles.actionContainer}>
             <ThemedButton style={styles.clearPadding}>
               <GradientView
@@ -98,6 +101,7 @@ export default function HomeScreen() {
           </View>
         </View>
       </SafeAreaView>
+      {/* //! Accessibility Features Modal */}
       {showModal && (
         <Modal visible={showModal} onClose={() => setShowModal(false)}>
           <AccessibilityFeatures />
