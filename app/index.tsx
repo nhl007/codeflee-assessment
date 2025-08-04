@@ -12,7 +12,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
   const {
-    state: { theme },
+    state: { theme, textAlign },
   } = useAccessibilityContext();
 
   const [showModal, setShowModal] = useState(true);
@@ -57,7 +57,19 @@ export default function HomeScreen() {
           </ThemedButton>
         </View>
         <View style={styles.titleContainer}>
-          <View style={styles.companyContainer}>
+          <View
+            style={[
+              {
+                justifyContent:
+                  textAlign === "center"
+                    ? "center"
+                    : textAlign === "right"
+                    ? "flex-end"
+                    : "flex-start",
+              },
+              styles.companyContainer,
+            ]}
+          >
             <Ionicons name="logo-react" size={40} color="#c01afe" />
             <ThemedText type="title">LiftUP Ai</ThemedText>
           </View>
