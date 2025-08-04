@@ -7,7 +7,7 @@ import useAccessibilityContext from "@/hooks/useAccessibilityContext";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useState } from "react";
-import { Image, Platform, StyleSheet, View } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 16,
-    paddingVertical: Platform.OS === "ios" ? 40 : 24,
+    paddingVertical: 16,
   },
   menuContainer: {
     zIndex: 99,
