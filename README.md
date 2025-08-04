@@ -1,6 +1,9 @@
 # CodeFlee Assessment
 
-### Asif Nihal [(apar.asif.an@gmail.com)](mailto:apar.asif.an@gmail.com)
+### Asif Nihal
+
+- Email : [apar.asif.an@gmail.com](mailto:apar.asif.an@gmail.com)
+- LinkedIn : [Asif Nihal](https://www.linkedin.com/in/asif-nihal/)
 
 ## Get started (How to run the project)
 
