@@ -16,12 +16,6 @@
    npx expo start
    ```
 
-feat: Add Modal component with gesture support and accessibility features
+## My Approach
 
-- Implemented a new Modal component that supports swipe gestures for closing.
-- Integrated accessibility context to manage theme and text properties.
-- Added GradientView for background styling based on theme.
-- Created ThemedText, ThemedButton, and ThemedView components for consistent styling.
-- Introduced ModalItemCard for card representation within the modal.
-- Established Accessibility context for managing application state and user preferences.
-- Added utility constants for height calculations based on screen dimensions.
+I began by analyzing the project requirements and breaking them down into manageable tasks. I followed React Native best practices to ensure proper usage of the framework. I focused on writing clean, well-organized code and structuring components for clarity and reusability. For UI/UX fidelity, I aimed to closely match the design while maintaining responsiveness and interactive elements. State management was handled with a predictable approach (React Context) to maintain clarity and reliability throughout the app.
